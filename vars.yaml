@@ -2,8 +2,8 @@
   hosts: web
   become: yes
   vars:
-  course: "devops"
-  duration: "120 days"
+    course: "devops"
+    duration: "120 days"
   tasks:
   - name: debug from user
     ansible.builtin.debug:
