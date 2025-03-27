@@ -1,0 +1,10 @@
+- name: play 1 
+  hosts: web
+  tasks:
+  - name: debug module
+    ansible.builtin.debug: 
+      msg: "iam from play 1 learning {{course}}"
+
+  - name: debug module
+    ansible.builtin.debug: 
+      msg: "the duration will be {{duration}}"
