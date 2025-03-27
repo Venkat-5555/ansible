@@ -8,3 +8,9 @@
   - name: debug from user
     ansible.builtin.debug:
       msg: "the course name is {{course}} and duration is {{duration}}"
+  tasks:
+  vars:
+    course: "AWS"
+  - name: debug from user
+    ansible.builtin.debug:
+      msg: "the course name is {{course}} and duration is {{duration}}"
