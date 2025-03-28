@@ -1,0 +1,7 @@
+- name: printing ansible facts
+  hosts: web
+  become: yes
+  tasks:
+  - name: ansible facts
+    ansible.builtin.debug:
+      var: {{ansible_facts}}
