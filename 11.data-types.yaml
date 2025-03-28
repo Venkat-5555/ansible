@@ -1,0 +1,23 @@
+- name: using datatypes in local hosts
+  hosts: local
+  connection: local
+  vars:
+    course: "devops with aws"
+    duration: 120
+    topics:
+    - aws
+    - jenkins
+    - linux
+    - shell
+    tools:
+      ci: jenkins
+      cm: ansible
+      cloud: AWS
+      aws:
+      - s3
+      - ami
+      - load balancer
+  tasks:
+  - name: print datatypes in local
+    ansible.builtin.debug:
+      msg: "iam learning {{course}} with duration of days: {{duration}} & laerning topics: {{topics}} and tools:{{tools}}"
