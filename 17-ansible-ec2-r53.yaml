@@ -3,7 +3,6 @@
   connection: local
   become: yes
   vars:
-    ansible_python_interpreter: /usr/bin/python3
     subnet_id: "subnet-0cfffd2292d4c9e00"
     sg_id: "sg-07d8fb22810134e87"
     ami_id: "ami-09c813fb71547fc4f"
