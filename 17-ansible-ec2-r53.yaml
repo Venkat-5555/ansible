@@ -15,6 +15,7 @@
     amazon.aws.ec2_instance:
       name: "{{ item }}"
       region: "us-east-1"
+      state: running
       vpc_subnet_id: "{{ subnet_id }}"
       instance_type: t3.micro
       security_group:  "{{ sg_id }}"
