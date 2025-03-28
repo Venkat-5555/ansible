@@ -1,0 +1,16 @@
+- name: when via prompt
+  hosts: local
+  conection: local
+  vars_prompt:
+  - name: value
+    prompt: enter the value
+    private: false
+  tasks:
+  - name: value greater than 10
+    ansible.builtin.debug:
+      msg: "the value {{value}} is greater or equal than 10"
+    when: value | int >= 10
+  - name: value less than 10
+    ansible.builtin.debug:
+      msg: "the value {{value}} is less than 10"
+    when: value | int < 10
