@@ -1,7 +1,7 @@
 - name: create ec2 and r53
   hosts: local
   connection: local
-  become: yes
+  become: false
   vars:
     subnet_id: "subnet-0cfffd2292d4c9e00"
     sg_id: "sg-07d8fb22810134e87"
