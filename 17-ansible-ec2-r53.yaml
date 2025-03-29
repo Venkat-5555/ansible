@@ -22,3 +22,7 @@
       image_id:  "{{ ami_id}}"
     loop:  "{{ instances }}"
     register: ec2_instances
+
+  - name: print o/p of instances
+    ansible.builtin.debug:
+      var: ec2_instances 
