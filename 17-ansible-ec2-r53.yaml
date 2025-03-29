@@ -41,11 +41,11 @@
 
     loop: "{{ ec2_instances.results }}"
 
-  - name: create r53 for backend and mysql 
+  - name: create r53 for frontend 
     amazon.aws.route53:
       state: present
       zone: "{{ zone }}"
-      record: "{{ item.item }}.{{ zone }}"
+      record: "{{ zone }}"
       type: A
       ttl: 1
       value: "{{ item.instances[0].public_ip_address }}"
