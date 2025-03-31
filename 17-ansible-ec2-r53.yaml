@@ -12,6 +12,14 @@
     - frontend
     zone: kubevprofile.thevenkat.xyz
   tasks:
+  - name: install pip3.9
+    ansible.builtin.package:
+      name: "{{ item }}"
+      state: present
+    loop:
+    - pip3.9
+    - boto3
+    - botocore
   - name: create ec2 instances
     amazon.aws.ec2_instance:
       name: "{{ item }}"
