@@ -16,6 +16,7 @@
     ansible.builtin.package:
       name: "{{ item }}"
       state: present
+    become: yes
     loop:
     - pip3.9
     - boto3
