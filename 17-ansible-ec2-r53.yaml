@@ -14,13 +14,17 @@
   tasks:
   - name: install pip3.9
     ansible.builtin.package:
-      name: "{{ item }}"
+      name: python3.9-pip
       state: present
     become: yes
-    loop:
-    - pip3.9
-    - boto3
-    - botocore
+
+  - name: install boto3 and botocore
+    pip:
+      name:
+        - boto3
+        - botocore
+      executable: /usr/bin/pip3.9
+      
   - name: create ec2 instances
     amazon.aws.ec2_instance:
       name: "{{ item }}"
