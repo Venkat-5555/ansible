@@ -3,14 +3,14 @@
   connection: local
   become: false
   vars:
-    subnet_id: "subnet-0cfffd2292d4c9e00"
-    sg_id: "sg-07d8fb22810134e87"
+    subnet_id: "subnet-07a11261d9e9d72b7"
+    sg_id: "sg-0ea4dd1bfbcd3fda3"
     ami_id: "ami-09c813fb71547fc4f"
     instances:
     - mysql
     - backend
     - frontend
-    zone: kubevprofile.thevenkat.xyz
+    zone: "expense.thevenkat.xyz"
   tasks:
   - name: install pip3.9
     ansible.builtin.package:
@@ -24,7 +24,7 @@
         - boto3
         - botocore
       executable: /usr/bin/pip3.9
-      
+
   - name: create ec2 instances
     amazon.aws.ec2_instance:
       name: "{{ item }}"
